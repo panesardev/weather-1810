@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Weather Information</title>
+	<!-- Google Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap">
+	<!-- Font Awesome icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script async src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script async src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}">
+	<link rel="stylesheet" href="../static/css/gradients.css" th:href="@{/css/gradients.css}">
+</head>
+<body class="nevy-gradient">
+	<div class="container pt-4">
+		<h1 class="p-4 text-center border-bottom" style="font-family: 'nunito';">Weather Information <span class="text-warning" th:text="${location}">Location</span>, <span class="text-warning" th:text="${country}">CC</span></h1>
+		<div>
+			<a href="/" class="btn btn-sm" id="submit">Go Home</a>
+		</div>
+		<div class="px-4 py-3" style="font-family: 'nunito';">
+			<div class="row">
+				<div class="col-md text-center"><h2 class="display-2" th:text="${temp} + '°C'">10°C</h2></div>
+			</div>
+			<div class="row">
+				<div class="col-md text-warning text-center"><h4 th:text="'Feels like '+${feels_like}+'°C'">Feels like 7°C</h4></div>
+			</div>
+			<div class="text-center">
+				<h3 class="custom-text" style="font-family: 'open sans';">Conditions: <span th:text="${main}">main</span>, <span th:text="${description}">Discription</span></h3>
+			</div>
+			<table class="w-75 mx-auto mt-5 custom-text">
+				<tr class="text-center">
+					<td><h4 th:text="'Minimum: '+${temp_min}+ '°C'">Min 5°C</h4></td>
+					<td><h4 th:text="'Maximum: '+${temp_max}+ '°C'">Max 15°C</h4></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
