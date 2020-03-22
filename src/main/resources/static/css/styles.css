@@ -71,3 +71,22 @@ input {
 .nevy-gradient {
 	background-image: linear-gradient(135deg, #330867, #3095d0);
 }
+
+@font-face {
+	font-family: 'SamsungOne 400';
+	font-style: normal;
+	font-weight: normal;
+	src: local('SamsungOne 400'), url('SamsungOne-400.woff') format('woff');
+}
+	
+@font-face {
+	font-family: 'SamsungOne 700';
+	font-style: normal;
+	font-weight: normal;
+	src: local('SamsungOne 700'), url('SamsungOne-700.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'candara';
+	src: url('Candara.ttf') format('ttf');
+}
