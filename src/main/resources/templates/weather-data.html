@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Weather Information</title>
+	<!-- Google Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap">
+	<!-- Font Awesome icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}">
+	<link rel="stylesheet" href="../static/css/gradients.css" th:href="@{/css/gradients.css}">
+</head>
+<body class="nevy-gradient">
+	<div class="container pt-4">
+		<h1 class="p-4 text-center border-bottom" style="font-family: 'nunito';">Weather Information <span class="text-warning" th:text="${location}">Location</span>, <span class="text-warning" th:text="${country}">CC</span></h1>
+		<div>
+			<a href="/" class="btn btn-sm" id="submit">Go Home</a>
+		</div>
+		<div class="px-4" style="font-family: 'nunito';">
+			<div class="row">
+				<div class="col-md text-center"><h2 class="display-2" th:text="${temp} + '°C'">10°C</h2></div>
+			</div>
+			<div class="h3 text-center custom-text">
+				<span class="custom-text" th:text="'Min '+${temp_min}+ '°C'">Min 5°C</span> <span>/</span> 
+				<span class="custom-text" th:text="'Max '+${temp_max}+ '°C'">Max 15°C</span> <span>/</span> 
+				<span class="text-warning" th:text="'Feels like '+${feels_like}+'°C'">Feels like 7°C</span>
+			</div>
+			<div class="text-center" style="font-family: 'Baloo Thambi 2';">
+				<h3 class="custom-text">Humidity <span style="font-family: consolas;">:</span> <span th:text="${humidity}+'%'">50%</span></h3>
+				<h3 class="custom-text">Conditions <span style="font-family: consolas;">:</span> <span th:text="${description}">Discription</span></h3>
+				<h3 class="custom-text">Wind speed <span style="font-family: consolas;">:</span> <span th:text="${speed}">45</span> meter/sec</h3>
+			</div>
+		</div>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
